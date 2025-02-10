@@ -1,4 +1,4 @@
-import { Calendar, Home, Inbox, Search, Settings } from 'lucide-react'
+import Navigation from '@/components/Navigation'
 import Link from 'next/link'
 
 // Menu items.
@@ -6,54 +6,36 @@ const items = [
   {
     title: 'AI',
     url: '/ui/ai',
-    icon: Home,
   },
   {
     title: 'Article',
     url: '/ui/article',
-    icon: Inbox,
   },
   {
     title: 'Article Card',
     url: '/ui/article-card',
-    icon: Calendar,
   },
   {
     title: 'Hero Section',
     url: '/ui/hero-section',
-    icon: Search,
   },
   {
     title: 'Header',
     url: '/ui/header',
-    icon: Settings,
   },
 ]
 
 export default async function Page({ params }: { params: Promise<{ slug?: string[] }> }) {
-  // Await the params
   const resolvedParams = await params
-
-  // Get the current page title from the slug
   const currentPage = resolvedParams.slug?.[0] || 'ai'
   const pageTitle = items.find((item) => item.url.includes(currentPage))?.title || 'AI'
 
   return (
     <div className="flex">
-      {/* Existing sidebar */}
+      {/* Sidebar with client component */}
       <div className="w-64 bg-white text-black min-h-screen p-4">
         <h1 className="text-xl font-bold mb-4">Components</h1>
-        <nav>
-          <ul className="space-y-2">
-            {items.map((item) => (
-              <li key={item.title}>
-                <Link href={item.url} className={`block py-1 px-2 rounded ${'/ui/' + currentPage === item.url ? 'bg-black text-white' : 'hover:bg-gray-100'}`}>
-                  {item.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <Navigation items={items} />
       </div>
 
       {/* New grid section */}
