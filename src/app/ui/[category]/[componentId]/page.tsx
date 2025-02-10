@@ -1,9 +1,42 @@
+import Navigation from '@/components/Navigation'
 import Link from 'next/link'
+
+const items = [
+  {
+    title: 'Chat Interface',
+    url: '/ui/ai/1',
+    id: '1',
+    description: 'Modern chat interface with message bubbles',
+  },
+  {
+    title: 'Message Input',
+    url: '/ui/ai/2',
+    id: '2',
+    description: 'Input field with send button and attachments',
+  },
+  {
+    title: 'Chat History',
+    url: '/ui/ai/3',
+    id: '3',
+    description: 'Scrollable chat history with timestamps',
+  },
+  {
+    title: 'AI Assistant Card',
+    url: '/ui/ai/4',
+    id: '4',
+    description: 'Profile card for AI assistant with status',
+  },
+]
 
 export default function ComponentPage({ params }: { params: { category: string; componentId: string } }) {
   return (
     <div className="flex min-h-screen bg-white">
       {/* Side Menu */}
+      <div className="w-64 bg-white text-black min-h-screen p-4">
+        <h1 className="text-xl font-bold mb-4">Components</h1>
+        <Navigation items={items} defaultPage={'ai'} />
+      </div>
+      {/* 
       <div className="w-64 border-r border-gray-200 p-8">
         <h2 className="text-2xl font-bold mb-6">{params.category}</h2>
         <nav>
@@ -30,7 +63,7 @@ export default function ComponentPage({ params }: { params: { category: string; 
             </li>
           </ul>
         </nav>
-      </div>
+      </div> */}
 
       {/* Main Content */}
       <div className="flex-1">
