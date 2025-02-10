@@ -1,28 +1,28 @@
-import Navigation from '@/components/Navigation'
+import Navigation from '@/components/ui/side-navigation'
 import Link from 'next/link'
 
 const items = [
   {
     title: 'Chat Interface',
-    url: '/ui/ai/1',
+    url: '/designs/ai/1',
     id: '1',
     description: 'Modern chat interface with message bubbles',
   },
   {
     title: 'Message Input',
-    url: '/ui/ai/2',
+    url: '/designs/ai/2',
     id: '2',
     description: 'Input field with send button and attachments',
   },
   {
     title: 'Chat History',
-    url: '/ui/ai/3',
+    url: '/designs/ai/3',
     id: '3',
     description: 'Scrollable chat history with timestamps',
   },
   {
     title: 'AI Assistant Card',
-    url: '/ui/ai/4',
+    url: '/designs/ai/4',
     id: '4',
     description: 'Profile card for AI assistant with status',
   },
@@ -34,7 +34,7 @@ export default function ComponentPage({ params }: { params: { category: string; 
       {/* Side Menu */}
       <div className="w-64 bg-white text-black min-h-screen p-4">
         <h1 className="text-xl font-bold mb-4">{params.category.toUpperCase()}</h1>
-        <Navigation items={items} defaultPage={'ai'} />
+        <Navigation items={items} defaultPage={'1'} />
       </div>
 
       {/* Main Content */}
