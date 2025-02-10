@@ -6,22 +6,27 @@ const items = [
   {
     title: 'AI',
     url: '/ui/ai',
+    id: 'ai',
   },
   {
     title: 'Article',
     url: '/ui/article',
+    id: 'article',
   },
   {
     title: 'Article Card',
     url: '/ui/article-card',
+    id: 'article-card',
   },
   {
     title: 'Hero Section',
     url: '/ui/hero-section',
+    id: 'hero-section',
   },
   {
     title: 'Header',
     url: '/ui/header',
+    id: 'header',
   },
 ]
 
@@ -35,7 +40,7 @@ export default async function Page({ params }: { params: Promise<{ slug?: string
       {/* Sidebar with client component */}
       <div className="w-64 bg-white text-black min-h-screen p-4">
         <h1 className="text-xl font-bold mb-4">Components</h1>
-        <Navigation items={items} />
+        <Navigation items={items} defaultPage={'ai'} />
       </div>
 
       {/* New grid section */}
