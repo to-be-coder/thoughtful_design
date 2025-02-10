@@ -36,34 +36,6 @@ export default function ComponentPage({ params }: { params: { category: string; 
         <h1 className="text-xl font-bold mb-4">Components</h1>
         <Navigation items={items} defaultPage={'ai'} />
       </div>
-      {/* 
-      <div className="w-64 border-r border-gray-200 p-8">
-        <h2 className="text-2xl font-bold mb-6">{params.category}</h2>
-        <nav>
-          <ul className="space-y-2">
-            <li>
-              <Link href={`/ui/${params.category}/1`} className={`block py-2 px-3 rounded-lg ${params.componentId === '1' ? 'bg-black text-white' : 'hover:bg-gray-100'}`}>
-                Component 1
-              </Link>
-            </li>
-            <li>
-              <Link href={`/ui/${params.category}/2`} className={`block py-2 px-3 rounded-lg ${params.componentId === '2' ? 'bg-black text-white' : 'hover:bg-gray-100'}`}>
-                Component 2
-              </Link>
-            </li>
-            <li>
-              <Link href={`/ui/${params.category}/3`} className={`block py-2 px-3 rounded-lg ${params.componentId === '3' ? 'bg-black text-white' : 'hover:bg-gray-100'}`}>
-                Component 3
-              </Link>
-            </li>
-            <li>
-              <Link href={`/ui/${params.category}/4`} className={`block py-2 px-3 rounded-lg ${params.componentId === '4' ? 'bg-black text-white' : 'hover:bg-gray-100'}`}>
-                Component 4
-              </Link>
-            </li>
-          </ul>
-        </nav>
-      </div> */}
 
       {/* Main Content */}
       <div className="flex-1">
