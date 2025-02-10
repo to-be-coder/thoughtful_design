@@ -33,7 +33,7 @@ export default function ComponentPage({ params }: { params: { category: string; 
     <div className="flex min-h-screen bg-white">
       {/* Side Menu */}
       <div className="w-64 bg-white text-black min-h-screen p-4">
-        <h1 className="text-xl font-bold mb-4">Components</h1>
+        <h1 className="text-xl font-bold mb-4">{params.category.toUpperCase()}</h1>
         <Navigation items={items} defaultPage={'ai'} />
       </div>
 
